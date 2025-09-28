@@ -1,68 +1,94 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* Modern ZK Privacy Design System */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Refined dark theme */
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    /* Elevated surfaces */
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Sophisticated purple */
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Professional teal */
+    --secondary: 173 58% 39%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Neutral surfaces */
+    --muted: 217 19% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Subtle accent */
+    --accent: 173 58% 39%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Status colors */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Interface elements */
+    --border: 217 19% 18%;
+    --input: 217 19% 12%;
+    --ring: 262 83% 58%;
+
+    /* Sophisticated glass effect */
+    --glass-bg: 222 84% 4.9% / 0.75;
+    --glass-border: 217 19% 18% / 0.5;
+    
+    /* Refined gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(252 83% 48%));
+    --gradient-secondary: linear-gradient(135deg, hsl(173 58% 39%), hsl(163 58% 35%));
+    --gradient-bg: linear-gradient(135deg, hsl(222 84% 4.9%), hsl(217 19% 6%));
+    --gradient-subtle: linear-gradient(135deg, hsl(222 84% 4.9% / 0.8), hsl(217 19% 8% / 0.6));
+    
+    /* Subtle effects */
+    --glow-primary: 0 0 40px hsl(262 83% 58% / 0.15);
+    --glow-secondary: 0 0 40px hsl(173 58% 39% / 0.15);
+    --shadow-elevated: 0 10px 38px -10px hsl(222 84% 4.9% / 0.35), 0 10px 20px -15px hsl(222 84% 4.9% / 0.2);
+
+    --radius: 0.75rem;
+
+    /* Sidebar (keeping existing) */
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 270 91% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 6% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 6% 20%;
+    --sidebar-ring: 270 91% 65%;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
-  button {
-    background-color: #f9f9f9;
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-bg);
   }
+}
+
+.transfer-button{
+  background-color: rgb(71, 68, 238);
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+}
+.transfer-button:hover{
+  background-color: blue;
 }
